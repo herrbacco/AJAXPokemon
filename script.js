@@ -2,7 +2,7 @@ $(function(){
 
 
   var $sidenav = $('.sidenav');
-  var $display = $('#displayDiv');
+  var $cardDeck = $('.container');
   var $start = $('#start');
   var $stop =$('#stop');
 
@@ -44,14 +44,19 @@ $(function(){
       data: cards,
       success: function(cards){
 
-        $display.append('<h2 class="inactive '+whichPokemon+'">'+cards.cards[whichPokemon].name+"</h2>");
-        $display.append('<img class="inactive '+whichPokemon+'" src="'+cards.cards[whichPokemon].imageUrl+'">');
-        $display.append('<h3 class="inactive '+whichPokemon+'">Art by: '+cards.cards[whichPokemon].artist+'</h3>');
+        var newCard = $('<div class="card inactive" id="'+whichPokemon.toString()+'th"></div>');
+
+        newCard.append('<h2>'+cards.cards[whichPokemon].name+"</h2>");
+        newCard.append('<img src="'+cards.cards[whichPokemon].imageUrl+'">');
+        newCard.append('<h3>Art by: '+cards.cards[whichPokemon].artist+'</h3>');
+
+        $cardDeck.append(newCard);
 
         $('.active').toggleClass('active inactive');
         setTimeout(function(){
-          $('.'+whichPokemon.toString()).toggleClass('inactive active');
-        });
+          $('#'+whichPokemon.toString()+'th').toggleClass('active');
+          $('#'+whichPokemon.toString()+'th').toggleClass('inactive');
+        }, 500);
 //        $display.empty();
 //
 //        $display.append('<h2>'+cards.cards[whichPokemon].name+"</h2>");

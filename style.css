@@ -23,6 +23,12 @@
     color: #f1f1f1;
 }
 
+input {
+  position:absolute;
+  margin:30px;
+
+}
+
 /* Style page content */
 .main {
     position: absolute;
@@ -35,12 +41,12 @@
          -o-perspective: 800px;
             perspective: 800px;
 }
-#displayDiv{
+.container {
   position:relative;
-  -webkit-transition: -webkit-transform 3s;
-     -moz-transition: -moz-transform 3s;
-       -o-transition: -o-transform 3s;
-          transition: transform 3s;
+  -webkit-transition: -webkit-transform 2s;
+     -moz-transition: -moz-transform 2s;
+       -o-transition: -o-transform 2s;
+          transition: transform 2s;
   -webkit-transform-style: preserve-3d;
      -moz-transform-style: preserve-3d;
        -o-transform-style: preserve-3d;
@@ -50,7 +56,8 @@
        -o-transform-origin: right center;
           transform-origin: right center;
 }
-#displayDiv h2, #displayDiv img, #displayDiv h3{
+div.card{
+  position:absolute;
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
        -o-backface-visibility: hidden;
@@ -62,10 +69,10 @@
        -o-transition: inherit;
           transition: inherit;
 
-  -webkit-transform: rotateY( 180deg ) translateX(100%);
-     -moz-transform: rotateY( 180deg ) translateX(100%);
-       -o-transform: rotateY( 180deg ) translateX(100%);
-          transform: rotateY( 180deg ) translateX(100%);
+  -webkit-transform: rotateY( -180deg ) translateX(-110%);
+     -moz-transform: rotateY( -180deg ) translateX(-110%);
+       -o-transform: rotateY( -180deg ) translateX(-110%);
+          transform: rotateY( -180deg ) translateX(-110%);
 }
 .active {
   -webkit-transition: inherit;
@@ -73,10 +80,10 @@
        -o-transition: inherit;
           transition: inherit;
 
-  -webkit-transform: translateX( -10% ) rotateY( 0deg );
-     -moz-transform: translateX( -10% ) rotateY( 0deg );
-       -o-transform: translateX( -10% ) rotateY( 0deg );
-          transform: translateX( -10% ) rotateY( 0deg );
+  -webkit-transform: translateX( 0% ) rotateY( 0deg );
+     -moz-transform: translateX( 0% ) rotateY( 0deg );
+       -o-transform: translateX( 0% ) rotateY( 0deg );
+          transform: translateX( 0% ) rotateY( 0deg );
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
