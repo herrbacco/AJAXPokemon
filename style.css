@@ -23,6 +23,12 @@
     color: #f1f1f1;
 }
 
+input {
+  position:fixed;
+  margin:30px;
+
+}
+
 /* Style page content */
 .main {
     position: fixed;
@@ -30,7 +36,54 @@
     margin-top: 50px;
     padding: 0px 10px;
 
+    -webkit-perspective: 800px;
+       -moz-perspective: 800px;
+         -o-perspective: 800px;
+            perspective: 800px;
+}
+.container {
+  position:relative;
+  -webkit-transition: -webkit-transform 2s;
+     -moz-transition: -moz-transform 2s;
+       -o-transition: -o-transform 2s;
+          transition: transform 2s;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+       -o-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: right center;
+     -moz-transform-origin: right center;
+       -o-transform-origin: right center;
+          transform-origin: right center;
+}
+div.card{
+  position:absolute;
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+       -o-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.inactive {
+  -webkit-transition: inherit;
+     -moz-transition: inherit;
+       -o-transition: inherit;
+          transition: inherit;
 
+  -webkit-transform: rotateY( -180deg ) translateX(-110%);
+     -moz-transform: rotateY( -180deg ) translateX(-110%);
+       -o-transform: rotateY( -180deg ) translateX(-110%);
+          transform: rotateY( -180deg ) translateX(-110%);
+}
+.active {
+  -webkit-transition: inherit;
+     -moz-transition: inherit;
+       -o-transition: inherit;
+          transition: inherit;
+
+  -webkit-transform: translateX( 0% ) rotateY( 0deg );
+     -moz-transform: translateX( 0% ) rotateY( 0deg );
+       -o-transform: translateX( 0% ) rotateY( 0deg );
+          transform: translateX( 0% ) rotateY( 0deg );
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
