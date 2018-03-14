@@ -24,14 +24,14 @@
 }
 
 input {
-  position:absolute;
+  position:fixed;
   margin:30px;
 
 }
 
 /* Style page content */
 .main {
-    position: absolute;
+    position: fixed;
     margin-left: 200px;
     margin-top: 50px;
     padding: 0px 10px;
