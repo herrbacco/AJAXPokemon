@@ -44,11 +44,19 @@ $(function(){
       data: cards,
       success: function(cards){
 
-        $display.empty();
+        $display.append('<h2 class="inactive '+whichPokemon+'">'+cards.cards[whichPokemon].name+"</h2>");
+        $display.append('<img class="inactive '+whichPokemon+'" src="'+cards.cards[whichPokemon].imageUrl+'">');
+        $display.append('<h3 class="inactive '+whichPokemon+'">Art by: '+cards.cards[whichPokemon].artist+'</h3>');
 
-        $display.append('<h2>'+cards.cards[whichPokemon].name+"</h2>");
-        $display.append('<img src="'+cards.cards[whichPokemon].imageUrl+'">');
-        $display.append('<h3>Art by: '+cards.cards[whichPokemon].artist+'</h3>');
+        $('.active').toggleClass('active inactive');
+        setTimeout(function(){
+          $('.'+whichPokemon.toString()).toggleClass('inactive active');
+        });
+//        $display.empty();
+//
+//        $display.append('<h2>'+cards.cards[whichPokemon].name+"</h2>");
+//        $display.append('<img src="'+cards.cards[whichPokemon].imageUrl+'">');
+//        $display.append('<h3>Art by: '+cards.cards[whichPokemon].artist+'</h3>');
 
         console.log("LoadPokemon");
         index = (parseInt(whichPokemon) >= 99 ? 0 : parseInt(whichPokemon)+1);
